@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/android.iml" filepath="$PROJECT_DIR$/.idea/modules/android.iml" group="android" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="android/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1995895097/audio_service.iml" filepath="$PROJECT_DIR$/.idea/modules/-1995895097/audio_service.iml" group="android/audio_service" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-829732702/audio_session.iml" filepath="$PROJECT_DIR$/.idea/modules/-829732702/audio_session.iml" group="android/audio_session" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/983053235/cloud_firestore.iml" filepath="$PROJECT_DIR$/.idea/modules/983053235/cloud_firestore.iml" group="android/cloud_firestore" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1864327983/firebase_auth.iml" filepath="$PROJECT_DIR$/.idea/modules/1864327983/firebase_auth.iml" group="android/firebase_auth" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/656068455/firebase_core.iml" filepath="$PROJECT_DIR$/.idea/modules/656068455/firebase_core.iml" group="android/firebase_core" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-2088203565/firebase_storage.iml" filepath="$PROJECT_DIR$/.idea/modules/-2088203565/firebase_storage.iml" group="android/firebase_storage" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1726017547/flutter_inapp_purchase.iml" filepath="$PROJECT_DIR$/.idea/modules/-1726017547/flutter_inapp_purchase.iml" group="android/flutter_inapp_purchase" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/363898945/fluttertoast.iml" filepath="$PROJECT_DIR$/.idea/modules/363898945/fluttertoast.iml" group="android/fluttertoast" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-340396704/just_audio.iml" filepath="$PROJECT_DIR$/.idea/modules/-340396704/just_audio.iml" group="android/just_audio" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1012415897/path_provider.iml" filepath="$PROJECT_DIR$/.idea/modules/1012415897/path_provider.iml" group="android/path_provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1654472125/purchases_flutter.iml" filepath="$PROJECT_DIR$/.idea/modules/-1654472125/purchases_flutter.iml" group="android/purchases_flutter" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-823787859/share.iml" filepath="$PROJECT_DIR$/.idea/modules/-823787859/share.iml" group="android/share" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/1437531213/shared_preferences.iml" filepath="$PROJECT_DIR$/.idea/modules/1437531213/shared_preferences.iml" group="android/shared_preferences" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-85720791/sqflite.iml" filepath="$PROJECT_DIR$/.idea/modules/-85720791/sqflite.iml" group="android/sqflite" />
+    </modules>
+  </component>
+</project>

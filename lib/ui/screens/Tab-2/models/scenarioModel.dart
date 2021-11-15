@@ -1,0 +1,11 @@
+import 'package:audiobook/ui/screens/Tab-1/models/musicModel.dart';
+
+class ScenarioModel {
+  ScenarioModel({
+    required this.title,
+    required this.musicModel,
+  });
+
+  String title;
+  List<MusicModel> musicModel;
+}

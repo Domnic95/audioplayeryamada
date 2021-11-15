@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="GradleMigrationSettings" migrationVersion="1" />
+  <component name="GradleSettings">
+    <option name="linkedExternalProjectsSettings">
+      <GradleProjectSettings>
+        <option name="testRunner" value="PLATFORM" />
+        <option name="distributionType" value="DEFAULT_WRAPPED" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="modules">
+          <set>
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/audio_service-0.18.0/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/audio_session-0.1.6+1/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-2.5.3/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-3.1.3/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-1.7.0/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_storage-10.0.5/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/flutter_inapp_purchase-5.0.3/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/fluttertoast-8.0.8/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/just_audio-0.9.13/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/path_provider-2.0.4/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/purchases_flutter-3.4.5/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/share-2.0.4/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/shared_preferences-2.0.7/android" />
+            <option value="C:/tools/flutter/.pub-cache/hosted/pub.dartlang.org/sqflite-2.0.0+4/android" />
+            <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/app" />
+          </set>
+        </option>
+        <option name="resolveModulePerSourceSet" value="false" />
+      </GradleProjectSettings>
+    </option>
+  </component>
+</project>

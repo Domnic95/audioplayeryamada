@@ -1,0 +1,62 @@
+{
+  "project_info": {
+    "project_number": "1027276688557",
+    "project_id": "e-animation",
+    "storage_bucket": "e-animation.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027276688557:android:27dfcfaa077c4a094e4a24",
+        "android_client_info": {
+          "package_name": "jp.esituation.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1027276688557-alpakjbctduulnjm9ii9mjrjlu6pgiou.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jp.esituation.app",
+            "certificate_hash": "9a758287d54c1f66d389daeaa51abb8d8004a06f"
+          }
+        },
+        {
+          "client_id": "1027276688557-iejgenp90lsth0q7166q3u1d6f665cqn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "jp.esituation.app",
+            "certificate_hash": "c02d72cf8c859acd0ad5a7a45bbe7c508c0b4e57"
+          }
+        },
+        {
+          "client_id": "1027276688557-v3kqiaomj65u9cs38umb19n644ql9n81.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1eOqmQFOtN6NlMZKG0__NGuwikoy9LF4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1027276688557-v3kqiaomj65u9cs38umb19n644ql9n81.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1027276688557-84ah3rs3f64pmfq27mk69o9acgoa4m5q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.audiobook"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
