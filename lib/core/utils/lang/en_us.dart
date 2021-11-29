@@ -72,9 +72,11 @@ const Map<String, String> enUS = {
   // subscription
   'month': "month",
   'months': "months",
+  '/month':"month",
   'select_a_plan': 'Select a plan',
   'pop': 'pop',
   'taro': 'taro',
   "welcome": "Welcome!",
-  'logInAnd': 'Log in and enjoy Situation Voice !'
+  'logInAnd': 'Log in and enjoy Situation Voice !',
+  'yen': 'yen',
 };

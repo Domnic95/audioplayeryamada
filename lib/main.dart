@@ -27,6 +27,7 @@ void main() async {
   audioPlayerHandlerImpl = AudioPlayerHandlerImpl();
   await purchaseService.initialize();
   await purchaseService.fetchData();
+
   audioHandler = await AudioService.init(
     builder: () => audioPlayerHandlerImpl,
     config: AudioServiceConfig(
@@ -37,7 +38,11 @@ void main() async {
   );
 
   userController.getUserDetail();
+    audioHandler.mediaItem.listen((event) {
+        AlertDialog(content: Text('here'));
 
+
+    });
 
 
   // await PurchaseApi.init();
@@ -57,7 +62,10 @@ class MyApp extends StatelessWidget {
       translations: LocalizationService(context),
       theme: AppTheme.defTheme,
       debugShowCheckedModeBanner: false,
-      locale: LocalizationService.locale,
+      locale:  Locale('ja', 'JP'),
+      // locale: LocalizationService.locale,
+
+
       fallbackLocale: LocalizationService.fallbackLocale,
       home: BaseScreen(),
     );

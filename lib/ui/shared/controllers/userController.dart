@@ -136,4 +136,14 @@ class UserController extends GetxController {
     // print(music);
     return music;
   }
+  Future subscribe()async{
+    if (FirebaseInstance.firebaseAuth!.currentUser != null){
+      print('entry random');
+      await  FirebaseFirestore.instance
+          .collection('users')
+          .doc(userInformation.id).update({
+        'inSubscription':true
+      });
+    }
+    }
 }

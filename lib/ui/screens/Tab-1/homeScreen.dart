@@ -273,36 +273,43 @@ class PlayControlBox extends StatelessWidget {
                 stream: audioHandler.mediaItem,
                 builder: (_, snapshot) {
                   final MediaItem? mediaItem = snapshot.data;
-                  return Row(
-                    children: [
-                      Container(
-                        height: 45,
-                        width: 45,
-                        decoration: mediaItem?.artUri == null
-                            ? BoxDecoration(
-                                image: DecorationImage(
-                                    image: AssetImage(AppImages.tent2)))
-                            : BoxDecoration(
-                                image: DecorationImage(
-                                    image: NetworkImage(
-                                        mediaItem?.artUri.toString() as String),
-                                    fit: BoxFit.cover)),
-                      ),
-                      getSizedBox(w: 20),
-                      Text(
-                        (currentMusicModelTrackIndex == 0
-                                ? ""
-                                : currentMusicModelTrackIndex.toString() +
-                                    " ") +
-                            (mediaItem?.title ?? "Title"),
-                        style: TextStyle(
-                            fontSize: getWidth(13),
-                            fontWeight: FontWeight.w600),
-                      ),
-                    ],
+                  return Expanded(
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 45,
+                          width: 45,
+                          decoration: mediaItem?.artUri == null
+                              ? BoxDecoration(
+                                  image: DecorationImage(
+                                      image: AssetImage(AppImages.tent2)))
+                              : BoxDecoration(
+                                  image: DecorationImage(
+                                      image: NetworkImage(
+                                          mediaItem?.artUri.toString() as String),
+                                      fit: BoxFit.cover)),
+                        ),
+                        getSizedBox(w: 20),
+                        Expanded(
+                          child: Text(
+
+                            (currentMusicModelTrackIndex == 0
+                                    ? ""
+                                    : currentMusicModelTrackIndex.toString() +
+                                        " ") +
+                                (mediaItem?.title ?? "Title"), maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+
+                                fontSize: getWidth(13),
+                                fontWeight: FontWeight.w600),
+                          ),
+                        ),
+                      ],
+                    ),
                   );
                 }),
-            Spacer(),
+            getSizedBox(w: 20),
             playPauseButton()
           ],
         ),

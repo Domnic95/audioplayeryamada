@@ -22,7 +22,7 @@ const Map<String, String> jaJP = {
   'to_login_screen': 'ログイン画面へ',
   'tc1': '登録・ログインすることによって、利用規約およびプライバシーポリシーに',
   'tc2': '同意したものとみなされます。',
-  'many_of': 'あたなのお気に入りの作品を多数掲載！\n今すぐ無料体験を始めよう',
+  'many_of': '月額登録で全作品を聴き放題',
   'for_540': '月額540円で\n全作品が聴き放題！',
   'button1': '7日間の無料体験を始める',
   'button2': '1話300円で購入',
@@ -63,11 +63,15 @@ const Map<String, String> jaJP = {
   //music bottomSheet
   '1x_speed': '1倍速',
   // subscription
-  'month': "月",
-  'months': "月",
-  'select_a_plan': 'プランを選択してください',
+  'month': "ヶ月",
+  'months': "ヶ月",
+  '/month':"月",
+
+  'select_a_plan': 'プランを選択',
   'pop': 'ポップ',
   'taro': '里芋',
   "welcome": "ようこそ!",
-  'logInAnd': 'ログインして シチュエーションボイスを 楽しもう!!'
+  'logInAnd': 'ログインして シチュエーションボイスを 楽しもう!!',
+  'yen': '円',
 };
+//'many_of': 'あたなのお気に入りの作品を多数掲載！\n今すぐ無料体験を始めよう',

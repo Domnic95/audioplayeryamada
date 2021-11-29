@@ -9,6 +9,7 @@ import 'package:audiobook/ui/screens/Tab-1/models/musicModel.dart';
 import 'package:audiobook/ui/screens/Tab-2/controllers/workDetailControll.dart';
 import 'package:audiobook/ui/screens/Tab-2/widgets/audioPlayer/trackList.dart';
 import 'package:audiobook/ui/screens/login/loginScreen.dart';
+import 'package:audiobook/ui/screens/login/trialAskingScreen.dart';
 import 'package:audiobook/ui/shared/appBar.dart';
 import 'package:audiobook/ui/shared/appButton/customButtonextension.dart';
 import 'package:audiobook/ui/shared/appButton/custombutton.dart';
@@ -39,6 +40,9 @@ class _WorkDetailsState extends State<WorkDetails> {
   void initState() {
     // TODO: implement initState
     super.initState();
+    print('intliaze');
+
+
   }
 
   @override
@@ -267,6 +271,8 @@ class _WorkDetailsState extends State<WorkDetails> {
         width: getWidth(240),
         onTap: () {
           print("PAUSE");
+
+
           audioHandler.pause();
         },
         widget: Stack(
@@ -302,18 +308,33 @@ class _WorkDetailsState extends State<WorkDetails> {
         radius: 9,
         width: getWidth(240),
         onTap: () async {
-          await AudioBookRepo().firebaseCounter(widget.musicModel);
-          if(audioPlayer.playing){
-            audioPlayer.stop();
+          if(!userController.userInformation.inSubscription){
+            if(FirebaseInstance.firebaseAuth!.currentUser == null){
+              Get.to(() => LoginScreen(),
+                  transition: Transition.downToUp);
+            }else{
+              Get.to(() => TrialAskingScreen(),
+                  transition: Transition.downToUp);
+            }
+
+          }else{
+            await AudioBookRepo().firebaseCounter(widget.musicModel);
+            if(audioPlayer.playing){
+              audioPlayer.stop();
+            }
+            userController.addHistory(id: widget.musicModel.id);
+            print("NOT PLAY");
+
+
+
+            audioPlayerHandlerImpl.updateCurrentPlayerData(
+                widget.musicModel,
+                currentQueueId == widget.musicModel.id
+                    ? currentMusicModelTrackIndex
+                    : 0);
+            openMusicPlaySheet();
           }
-          userController.addHistory(id: widget.musicModel.id);
-          print("NOT PLAY");
-          audioPlayerHandlerImpl.updateCurrentPlayerData(
-              widget.musicModel,
-              currentQueueId == widget.musicModel.id
-                  ? currentMusicModelTrackIndex
-                  : 0);
-          openMusicPlaySheet();
+
         },
         widget: Stack(
           alignment: Alignment.centerLeft,

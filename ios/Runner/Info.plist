@@ -45,6 +45,8 @@
 	<string>e-Situation needs access to your contacts to show you for selection</string>
 	<key>NSDocumentsFolderUsageDescription</key>
 	<string>e-Situation need access to your documents to upload them</string>
+	<key>NSLocalNetworkUsageDescription</key>
+	<string>e-Situation need access to your local network </string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>e-Situation needs access to your location to keep upi updated with around your location resources</string>
 	<key>NSLocationWhenInUseUsageDescription</key>

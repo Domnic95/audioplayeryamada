@@ -1,5 +1,6 @@
 import 'package:audio_service/audio_service.dart';
 import 'package:audio_session/audio_session.dart';
+import 'package:audiobook/main.dart';
 import 'package:audiobook/ui/screens/Tab-1/models/musicModel.dart';
 import 'package:audiobook/ui/shared/controllers/baseScreenController.dart';
 import 'package:get/get.dart' hide Rx;
@@ -327,6 +328,7 @@ class AudioPlayerHandlerImpl extends BaseAudioHandler
   }
 
   updateCurrentPlayerData(MusicModel musicModel, int index) {
+    print('userModelsad ');
     var temp = currentMusicModel;
     currentMusicModel = musicModel;
     currentMusicModelTrackIndex = index;
@@ -356,6 +358,23 @@ class AudioPlayerHandlerImpl extends BaseAudioHandler
       audioPlayerHandlerImpl.seek(Duration.zero);
       audioPlayerHandlerImpl.updateQueue(mediaItems);
       audioHandler.play();
+
+      audioHandler.playbackState.map((event) {
+        print("NOTPLAY");
+        print(event.position.inSeconds);
+      }).distinct();
+      print(
+        'stopLReZ'
+      );
+      print(userController.userInformation.inSubscription);
+      if(!userController.userInformation.inSubscription ){
+        Future.delayed(Duration(seconds: 10),(){
+          audioHandler.stop();
+        });
+      }
+      if(audioPlayerHandlerImpl.mediaItem.value!.duration!.inSeconds>=30){
+        audioHandler.stop();
+      }
     } else {
       audioHandler.skipToQueueItem(index);
     }

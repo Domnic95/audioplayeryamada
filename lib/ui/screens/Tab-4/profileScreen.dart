@@ -7,6 +7,7 @@ import 'package:audiobook/main.dart';
 import 'package:audiobook/ui/screens/Tab-1/homeScreen.dart';
 import 'package:audiobook/ui/screens/Tab-1/models/musicModel.dart';
 import 'package:audiobook/ui/screens/Tab-2/widgets/workDetails.dart';
+import 'package:audiobook/ui/screens/Tab-4/widgets/WebLoader.dart';
 import 'package:audiobook/ui/screens/Tab-4/widgets/browsingHistoryScreeen.dart';
 import 'package:audiobook/ui/screens/login/loginScreen.dart';
 import 'package:audiobook/ui/screens/login/trialAskingScreen.dart';
@@ -23,7 +24,9 @@ class ProfileScreen extends StatelessWidget {
       Get.find<BaseScreenController>();
   @override
   Widget build(BuildContext context) {
+
     return ListView(
+
       physics: BouncingScrollPhysics(),
       children: [
         getSizedBox(h: 30),
@@ -93,6 +96,8 @@ class ProfileScreen extends StatelessWidget {
   }
 
   Widget listOfMenu(BuildContext context) {
+    String inquiry = 'https://docs.google.com/forms/d/1QuHiaqbnXFXWJE1e2BdX-W7Pw_xJ9kfgGek-W07QpuU';
+    String tcUrl = 'https://esituation.jp/terms/';
     return GetBuilder(
       builder: (UserController controller) {
         List list = [
@@ -138,6 +143,22 @@ class ProfileScreen extends StatelessWidget {
                                 title: list[index],
                               ),
                           transition: Transition.downToUp);
+                    if(index ==2){
+                      Get.to(
+                              () => WebViewLoader(
+                            url: tcUrl,
+                                title: 't&c'.tr,
+                          ),
+                          transition: Transition.downToUp);
+                    }
+                    if(index ==3){
+                      Get.to(
+                              () => WebViewLoader(
+                            url: inquiry,
+                                title: 'inquiry'.tr,
+                          ),
+                          transition: Transition.downToUp);
+                    }
                     if (index == 4) {
                       showDialog(
                           context: context,

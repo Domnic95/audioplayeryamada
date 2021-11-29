@@ -35,17 +35,17 @@ class _TrialAskingScreenState extends State<TrialAskingScreen> {
     subscriptionPlan = [
       SubscriptionPlan(
           month: 'month'.tr,
-          price: 540,
+          price: 550,
           subscriptionMonth: 1,
           package: purchaseService.offering.current!.monthly),
       SubscriptionPlan(
           month: 'months'.tr,
-          price: 383,
+          price: 2300,
           subscriptionMonth: 6,
           package: purchaseService.offering.current!.sixMonth),
       SubscriptionPlan(
           month: 'months'.tr,
-          price: 350,
+          price: 4200,
           subscriptionMonth: 12,
           package: purchaseService.offering.current!.annual)
     ];
@@ -53,10 +53,11 @@ class _TrialAskingScreenState extends State<TrialAskingScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       body: Column(
         children: [
-          coverPhoto(),
+          coverPhoto(size),
           Expanded(
             child: SingleChildScrollView(
               child: Column(
@@ -137,16 +138,16 @@ class _TrialAskingScreenState extends State<TrialAskingScreen> {
                                   color: AppColor.kDefaultGreyText),
                             ),
                             Spacer(),
-                            GestureDetector(
-                              onTap: () {},
-                              child: Text(
-                                'restore_purchase'.tr,
-                                style: TextStyle(
-                                    fontSize: getWidth(11),
-                                    fontWeight: FontWeight.bold,
-                                    color: AppColor.kBarTextColor),
-                              ),
-                            ),
+                            // GestureDetector(
+                            //   onTap: () {},
+                            //   child: Text(
+                            //     'restore_purchase'.tr,
+                            //     style: TextStyle(
+                            //         fontSize: getWidth(11),
+                            //         fontWeight: FontWeight.bold,
+                            //         color: AppColor.kBarTextColor),
+                            //   ),
+                            // ),
                           ],
                         ),
                       ],
@@ -171,70 +172,89 @@ class _TrialAskingScreenState extends State<TrialAskingScreen> {
           selectedPlanIndex = index;
         });
       },
-      child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-        child: Container(
-          decoration: BoxDecoration(
-              border: Border.all(
-                  color: selectedPlanIndex == index
-                      ? AppColor.kBarButtonColor
-                      : Colors.transparent,
-                  width: 3),
-              borderRadius: BorderRadius.circular(10)),
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    Container(
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: selectedPlanIndex == index
-                            ? AppColor.kBarButtonColor
-                            : Colors.transparent,
-                        border: Border.all(
-                            color: AppColor.kBarButtonColor, width: 2),
-                      ),
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 5),
-                        child: Icon(
-                          Icons.done,
+      child: Container(
+        decoration: BoxDecoration(
+
+        ),
+        child: Card(
+          shadowColor: Colors.black,
+
+          elevation:5,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+          child: Container(
+
+            decoration: BoxDecoration(
+                // color: Colors.white,
+                // boxShadow: [
+                //   new BoxShadow(
+                //     color: Colors.black.withOpacity(0.1),
+                //     blurRadius: 12.0,
+                //     offset: Offset(1,1)
+                //   ),
+                // ],
+                border: Border.all(
+                    color: selectedPlanIndex == index
+                        ? AppColor.kBarButtonColor
+                        : Colors.transparent,
+                    width: 2),
+                borderRadius: BorderRadius.circular(10)),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8.0,vertical: 15),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Row(
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+
+                          shape: BoxShape.circle,
                           color: selectedPlanIndex == index
-                              ? Colors.white
+                              ? AppColor.kBarButtonColor
                               : Colors.transparent,
+                          border: Border.all(
+                              color: AppColor.kBarButtonColor, width: 1.5),
+                        ),
+                        child: Padding(
+                          padding: EdgeInsets.all(1 ),
+                          child: Icon(
+                            Icons.done,
+                            size: 15,
+                            color: selectedPlanIndex == index
+                                ? Colors.white
+                                : Colors.transparent,
+                          ),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      subscriptionPlan[index].subscriptionMonth.toString() +
-                          " " +
-                          subscriptionPlan[index].month.toString() +
-                          "  (" +
-                          subscriptionPlan[index].price.toString() +
-                          "Yen)",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )
-                  ],
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Text(
-                      subscriptionPlan[index].price.toString() + " yen /",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "month".tr,
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    )
-                  ],
-                )
-              ],
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        subscriptionPlan[index].subscriptionMonth.toString() +
+                            " " +
+                            subscriptionPlan[index].month.toString() +
+                            "  (" +
+                            subscriptionPlan[index].price.toString() +
+                            "yen".tr+")",
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  ),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Text(
+                        subscriptionPlan[index].price.toString() + "yen".tr+"/" ,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "/month".tr,
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      )
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
@@ -285,53 +305,82 @@ class _TrialAskingScreenState extends State<TrialAskingScreen> {
     );
   }
 
-  SafeArea coverPhoto() {
-    return SafeArea(
-      bottom: false,
-      child: Container(
-        height: getHeight(350),
-        width: Get.width,
-        decoration: BoxDecoration(
-            image: DecorationImage(
-                image: AssetImage(AppImages.planImage), fit: BoxFit.cover)),
-        child: Column(
-          children: [
-            Align(
-              alignment: Alignment.topRight,
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(0, 16, 16, 0),
-                child: GestureDetector(
-                  onTap: () {
-                    Get.back();
-                  },
-                  child: CircleAvatar(
-                    radius: 15,
-                    backgroundColor: Colors.white70,
-                    child: Center(
-                      child: Icon(
-                        Icons.close,
-                        color: Colors.black,
+   coverPhoto(Size size) {
+    return Container(
+      height: getHeight(350),
+      width: Get.width,
+      color: Colors.red,
+      // decoration: BoxDecoration(
+      //     image: DecorationImage(
+      //         image: AssetImage(AppImages.planImage), fit: BoxFit.cover)),
+      child: Stack(
+        children: [
+          Image.asset('assets/images/planPoster.png',
+
+              height: getHeight(350),
+              width: Get.width ,
+              fit: BoxFit.cover
+          ),
+          Stack(
+            alignment: Alignment.center,
+            children: [
+              Align(
+                alignment: Alignment.topRight,
+                child: Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 16, 16, 0),
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: CircleAvatar(
+                      radius: 15,
+                      backgroundColor: Colors.white70,
+                      child: Center(
+                        child: Icon(
+                          Icons.close,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                   ),
                 ),
               ),
-            ),
-            Spacer(),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10),
-              child: Text(
-                'many_of'.tr,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: getWidth(30),
-                    color: Colors.white),
+              // Spacer(),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Container(
+                  width: size.width*0.8,
+                  decoration: BoxDecoration(
+                      gradient: new LinearGradient(
+                          colors: [
+                            Color(0xff67AC30),
+                            Color(0xffC6E717),
+                          ],
+                          stops: [0.1, 1.0],
+                          begin: FractionalOffset.centerLeft,
+                          end: FractionalOffset.centerRight,
+                          tileMode: TileMode.repeated
+                      ),
+                  ),
+                  child: Padding(
+                    padding:  EdgeInsets.symmetric(vertical: 5),
+                    child: Text(
+                      'many_of'.tr,
+                      textAlign: TextAlign.center,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: getWidth(22),
+                          color: Colors.white),
+                    ),
+                  ),
+                ),
               ),
-            ),
-            Spacer(),
-          ],
-        ),
+
+            ],
+          ),
+        ],
       ),
     );
   }
